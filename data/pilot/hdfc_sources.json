@@ -1,0 +1,161 @@
+{
+  "description": "Pinned HDFC monthly listed-equity portfolio pilot, five schemes, June-August 2026",
+  "periods": [
+    {
+      "period_end": "2026-06-30",
+      "notice_date": "2026-07-08",
+      "notice": {
+        "local_name": "2026-06-30_notice.pdf",
+        "url": "https://files.hdfcfund.com/s3fs-public/2026-07/Notice%20-%20Monthly%20Portfolio%20Disclosure%20-%20June%2030%2C%202026.pdf",
+        "sha256": "c4c676e7c185a7d7f8bdf02b8d024d926ca59784220a4ddcdca983d0e880cf92",
+        "observed_http_last_modified": "Wed, 08 Jul 2026 09:44:20 GMT"
+      },
+      "sources": [
+        {
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap",
+          "local_name": "2026-06-30_flexi_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-07/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2030%20June%202026.xlsx",
+          "sha256": "f6f179dad0ccc1014ff7e1e88f7e64aec167ace1ad82fa6a543bdb5669d56cfc",
+          "observed_http_last_modified": "Wed, 08 Jul 2026 09:34:22 GMT"
+        },
+        {
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "local_name": "2026-06-30_focused.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-07/Monthly%20HDFC%20Focused%20Fund%20-%2030%20June%202026.xlsx",
+          "sha256": "7c170261330c564539e881495e692d320befa80bf3e4c4797f90f91e161c8235",
+          "observed_http_last_modified": "Wed, 08 Jul 2026 09:34:22 GMT"
+        },
+        {
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap",
+          "local_name": "2026-06-30_large_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-07/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2030%20June%202026.xlsx",
+          "sha256": "bd670fbb2f8ab12d9195fffbc85d3c6083a3bd34354831fda6257986169e1c26",
+          "observed_http_last_modified": "Wed, 08 Jul 2026 09:34:23 GMT"
+        },
+        {
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "local_name": "2026-06-30_mid_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-07/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2030%20June%202026.xlsx",
+          "sha256": "45105462af527717167af9e0ae5802bf3c5c4d19589e2052015b0bad720be54b",
+          "observed_http_last_modified": "Wed, 08 Jul 2026 09:34:24 GMT"
+        },
+        {
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap",
+          "local_name": "2026-06-30_small_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-07/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2030%20June%202026.xlsx",
+          "sha256": "9c26e725914d266b3d57e9237295df73405e1d46b78d166496d26c4d0913ad85",
+          "observed_http_last_modified": "Wed, 08 Jul 2026 09:34:30 GMT"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-07-31",
+      "notice_date": "2026-08-08",
+      "notice": {
+        "local_name": "2026-07-31_notice.pdf",
+        "url": "https://files.hdfcfund.com/s3fs-public/2026-08/Notice%20-%20Monthly%20Portfolio%20Disclosure%20-%20July%2031%2C%202026.pdf",
+        "sha256": "c06cdec6ac4843e2f7ee0de4913ef85214b3ec22cb823e093c6f081a3751a042",
+        "observed_http_last_modified": "Fri, 07 Aug 2026 18:52:52 GMT"
+      },
+      "sources": [
+        {
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap",
+          "local_name": "2026-07-31_flexi_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-08/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20July%202026.xlsx",
+          "sha256": "0ab4fd3000675be362444fd0547afa64b67e61c220b5ff36064dc05e0a36f24a",
+          "observed_http_last_modified": "Fri, 07 Aug 2026 18:47:21 GMT"
+        },
+        {
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "local_name": "2026-07-31_focused.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-08/Monthly%20HDFC%20Focused%20Fund%20-%2031%20July%202026.xlsx",
+          "sha256": "fcf2404ae25b148161ccee2c4e0adf7ced39653b04a4cf236ffe60f439e0fbaf",
+          "observed_http_last_modified": "Fri, 07 Aug 2026 18:47:21 GMT"
+        },
+        {
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap",
+          "local_name": "2026-07-31_large_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-08/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20July%202026.xlsx",
+          "sha256": "0774de842aa8a0a610064524bee287b08d02dafa0f4f870e3acc7f4a0b2d1463",
+          "observed_http_last_modified": "Fri, 07 Aug 2026 18:47:22 GMT"
+        },
+        {
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "local_name": "2026-07-31_mid_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-08/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2031%20July%202026.xlsx",
+          "sha256": "6defcb283a0859526a689138791112d5e236656c6e70a21689fbed1d3068e16b",
+          "observed_http_last_modified": "Fri, 07 Aug 2026 18:47:23 GMT"
+        },
+        {
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap",
+          "local_name": "2026-07-31_small_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-08/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20July%202026.xlsx",
+          "sha256": "ea8fbae638115e69b131a7653191bff3ebb94128f836ab49fbc5461a79c5189b",
+          "observed_http_last_modified": "Fri, 07 Aug 2026 18:47:29 GMT"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-08-31",
+      "notice_date": "2026-09-08",
+      "notice": {
+        "local_name": "2026-08-31_notice.pdf",
+        "url": "https://files.hdfcfund.com/s3fs-public/2026-09/Notice%20-%20Monthly%20Portfolio%20Disclosure%20-%20August%2031%2C%202026.pdf",
+        "sha256": "77c35e45de093236da0a11d94a05710c714652c6d48e4597aeecbe81bc1343b5",
+        "observed_http_last_modified": "Tue, 08 Sep 2026 11:53:10 GMT"
+      },
+      "sources": [
+        {
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap",
+          "local_name": "2026-08-31_flexi_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-09/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20August%202026.xlsx",
+          "sha256": "d1fc201003fe02fd740cef7b8f0436226b9211a5a659c62b530019c27db6b1fc",
+          "observed_http_last_modified": "Tue, 08 Sep 2026 11:43:18 GMT"
+        },
+        {
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "local_name": "2026-08-31_focused.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-09/Monthly%20HDFC%20Focused%20Fund%20-%2031%20August%202026.xlsx",
+          "sha256": "2ef93b47144c905a49e2fd2d55d3ef572cf3adba22466ec0d2ede1e4f69b7919",
+          "observed_http_last_modified": "Tue, 08 Sep 2026 11:43:18 GMT"
+        },
+        {
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap",
+          "local_name": "2026-08-31_large_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-09/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20August%202026.xlsx",
+          "sha256": "d9c3c4ae96af2bcc475bd8e582428ac5a04b483102ec286acd19c48c1b4aff56",
+          "observed_http_last_modified": "Tue, 08 Sep 2026 11:43:19 GMT"
+        },
+        {
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "local_name": "2026-08-31_mid_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-09/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2031%20August%202026.xlsx",
+          "sha256": "767a0a0025e82d8f74df9f31159f51bbc233b4085a1b7ae30f6e965db3574ea0",
+          "observed_http_last_modified": "Tue, 08 Sep 2026 11:43:19 GMT"
+        },
+        {
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap",
+          "local_name": "2026-08-31_small_cap.xlsx",
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-09/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20August%202026.xlsx",
+          "sha256": "81e9309e11ea517a14b427648a0ecee70d947e91c07ebd302107fe90f0e18bbc",
+          "observed_http_last_modified": "Tue, 08 Sep 2026 11:43:23 GMT"
+        }
+      ]
+    }
+  ]
+}

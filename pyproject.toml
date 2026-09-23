@@ -9,6 +9,9 @@ description = "Point-in-time research on disclosed Indian equity fund holdings"
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+pilot = ["openpyxl>=3.1,<4"]
+
 [project.scripts]
 flowrank = "flowrank.cli:main"
 
