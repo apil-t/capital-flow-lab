@@ -4,27 +4,36 @@ An initial research project for the idea in the [shared conversation](https://ch
 
 The demo data is **synthetic**. A separate, reproducible pilot imports real HDFC Mutual Fund disclosures. Neither output establishes that the ranking predicts returns.
 
-## Run the demo
+## Set up with uv
 
-Requires Python 3.11 or newer. No external Python packages are needed for the demo.
+With [uv](https://docs.astral.sh/uv/) installed, create `.venv` and install the project (editable, with the pilot extra):
 
 ```bash
-cd capital-flow-lab
-bash scripts/demo.sh
-PYTHONPATH=src python3 -m unittest discover -s tests -v
+bash scripts/setup.sh
+source .venv/bin/activate
 ```
 
-The demo creates `data/demo.sqlite` and shows one ranking plus three monthly research cohorts. Re-running it is safe with the same sample files. You can also install the command with `python3 -m pip install -e .` and use `flowrank` instead of `PYTHONPATH=src python3 -m flowrank`.
+This puts `flowrank` on your `PATH`. Re-running is safe. All commands below assume the virtual environment is active and you are in the project root.
+
+Without uv, use Python 3.11 or newer: `python3 -m venv .venv && source .venv/bin/activate && pip install -e '.[pilot]'`.
+
+## Run the demo
+
+```bash
+bash scripts/demo.sh
+python -m unittest discover -s tests -v
+```
+
+The demo creates `data/demo.sqlite` and shows one ranking plus three monthly research cohorts. Re-running it is safe with the same sample files.
 
 ## Run the HDFC disclosure pilot
 
 The pilot covers [five HDFC equity schemes](https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio) over June, July, and August 2026. It downloads 15 original XLSX files and three [monthly disclosure notices](https://www.hdfcfund.com/statutory-disclosure/portfolio/notices-portfolio). The source catalog pins their URLs and SHA-256 hashes. The parser reads listed equity holdings by ISIN, checks the scheme and reporting date, and reconciles each equity subtotal before importing 15 complete listed-equity snapshots (932 holding rows).
 
-Install the optional spreadsheet reader and run:
+The setup script already installs the spreadsheet reader the pilot needs. Run:
 
 ```bash
-python3 -m pip install -e '.[pilot]'
-python3 scripts/hdfc_pilot.py
+python scripts/hdfc_pilot.py
 flowrank rank --db data/research.sqlite --as-of 2026-09-07
 flowrank rank --db data/research.sqlite --as-of 2026-09-08
 ```
@@ -63,11 +72,11 @@ Each `(scheme_id, period_end, published_at)` in an import file must represent th
 Example commands after preparing your own CSVs:
 
 ```bash
-PYTHONPATH=src python3 -m flowrank init --db data/research.sqlite
-PYTHONPATH=src python3 -m flowrank import-holdings --db data/research.sqlite --file path/to/holdings.csv
-PYTHONPATH=src python3 -m flowrank import-prices --db data/research.sqlite --file path/to/prices.csv
-PYTHONPATH=src python3 -m flowrank rank --db data/research.sqlite --as-of 2025-04-30
-PYTHONPATH=src python3 -m flowrank backtest --db data/research.sqlite --start 2020-01-01 --end 2025-12-31 --horizon-days 90 --top 20 --benchmark YOUR_BENCHMARK_ID --cost-bps 25
+flowrank init --db data/research.sqlite
+flowrank import-holdings --db data/research.sqlite --file path/to/holdings.csv
+flowrank import-prices --db data/research.sqlite --file path/to/prices.csv
+flowrank rank --db data/research.sqlite --as-of 2025-04-30
+flowrank backtest --db data/research.sqlite --start 2020-01-01 --end 2025-12-31 --horizon-days 90 --top 20 --benchmark YOUR_BENCHMARK_ID --cost-bps 25
 ```
 
 ## What to build next
