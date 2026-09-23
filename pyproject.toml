@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capital-flow-lab"
+version = "0.1.0"
+description = "Point-in-time research on disclosed Indian equity fund holdings"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+flowrank = "flowrank.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

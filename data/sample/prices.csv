@@ -1,0 +1,17 @@
+asset_id,price_date,adjusted_close,source_url
+TEST00000001,2025-04-01,100,synthetic://prices
+TEST00000002,2025-04-01,100,synthetic://prices
+TEST00000003,2025-04-01,100,synthetic://prices
+NIFTY500_SYNTH,2025-04-01,1000,synthetic://prices
+TEST00000001,2025-05-01,110,synthetic://prices
+TEST00000002,2025-05-01,95,synthetic://prices
+TEST00000003,2025-05-01,108,synthetic://prices
+NIFTY500_SYNTH,2025-05-01,1020,synthetic://prices
+TEST00000001,2025-06-02,116,synthetic://prices
+TEST00000002,2025-06-02,96,synthetic://prices
+TEST00000003,2025-06-02,115,synthetic://prices
+NIFTY500_SYNTH,2025-06-02,1040,synthetic://prices
+TEST00000001,2025-07-03,118,synthetic://prices
+TEST00000002,2025-07-03,102,synthetic://prices
+TEST00000003,2025-07-03,120,synthetic://prices
+NIFTY500_SYNTH,2025-07-03,1055,synthetic://prices
