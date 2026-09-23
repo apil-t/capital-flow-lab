@@ -36,7 +36,7 @@ Original downloads stay in ignored `data/raw/hdfc/`; normalized CSV and manifest
 ## How this first version works
 
 1. Import a **complete** portfolio snapshot for each fund scheme and reporting period. Each snapshot has a period end, an availability cutoff with timezone, and a source URL. For the pilot, the cutoff follows the date-level rule above.
-2. At an `--as-of` date, select only snapshots already public by the end of that date in India. A later correction stays invisible to earlier decisions.
+2. At an `--as-of` date, select only snapshots whose stored availability cutoff has passed by the end of that date in India. A later correction stays invisible to earlier decisions.
 3. Compare the latest two visible snapshots within each scheme. A weight increase of more than 0.01 percentage points counts as one increasing scheme; a decrease counts as one decreasing scheme.
 4. Rank by `increasing_schemes - decreasing_schemes + clipped(net_weight_change_pp / 2, -1, 1)`. This is a simple hypothesis to test, not an optimized or predictive model.
 5. For each month-end decision, take the top `N`; enter at the first available adjusted close **after** the decision date; exit on the first available close at least `horizon_days` later; compare with the benchmark on the exact same dates; subtract a configurable round-trip cost.
@@ -56,7 +56,7 @@ An incomplete cohort is skipped. The reported average is an average of independe
 | `weight_pct` | Portfolio weight in percentage units (for example, `2.5`) |
 | `source_url` | URL of the original disclosure or archive |
 
-Each `(scheme_id, period_end, published_at)` in an import file must represent the **whole relevant equity portfolio**, because an omitted security is interpreted as a zero weight. Use a new publication timestamp for a corrected filing; never overwrite historical knowledge.
+Each `(scheme_id, period_end, published_at)` in an import file must represent the **whole relevant equity portfolio**, because an omitted security is interpreted as a zero weight. Use a new availability cutoff for a corrected filing; never overwrite historical knowledge.
 
 `import-prices` expects `asset_id,price_date,adjusted_close,source_url`. Prices must be adjusted consistently for splits, dividends and other corporate actions, including the benchmark series. Use historical constituents when expanding the investable universe. Never treat a current stock list as the past universe.
 
