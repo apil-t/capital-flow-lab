@@ -1,0 +1,16 @@
+{
+  "description": "Pinned NSE corporate-action review for HDFC pilot ISINs, July-August 2026",
+  "start_date": "2026-07-01",
+  "end_date": "2026-08-31",
+  "listing_date": "2026-07-31",
+  "action_source": {
+    "local_name": "2026-07-01_to_2026-08-31_actions.json",
+    "url": "https://www.nseindia.com/api/corporates-corporateActions?index=equities&from_date=01-07-2026&to_date=31-08-2026",
+    "sha256": "28c8a497943d3adfb8979004b597fc9af9c4ac600f4bb496318d90275798e973"
+  },
+  "listing_source": {
+    "local_name": "2026-07-31_bhavcopy.zip",
+    "url": "https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20260731_F_0000.csv.zip",
+    "sha256": "57464436a821df9eb97f63f5ac6f616e7e4edbf0695be10198a4d4c9e00de55c"
+  }
+}

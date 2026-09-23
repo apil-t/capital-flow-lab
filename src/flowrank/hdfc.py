@@ -14,13 +14,14 @@ from zoneinfo import ZoneInfo
 from .storage import import_holdings
 
 
-PARSER_VERSION = "hdfc-listed-equity-v1"
+PARSER_VERSION = "hdfc-listed-equity-v2"
 IST = ZoneInfo("Asia/Kolkata")
 ISIN = re.compile(r"^INE[A-Z0-9]{9}$")
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"
 PORTFOLIO_PAGE = "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
 NOTICE_PAGE = "https://www.hdfcfund.com/statutory-disclosure/portfolio/notices-portfolio"
-CSV_FIELDS = ("scheme_id", "asset_id", "period_end", "published_at", "weight_pct", "source_url")
+CSV_FIELDS = ("scheme_id", "asset_id", "period_end", "published_at", "weight_pct",
+              "quantity", "instrument_name", "source_url")
 
 
 def _sha256(path: Path) -> str:
@@ -68,7 +69,9 @@ def _fetch(source: dict, raw_dir: Path, referer: str) -> dict:
             "http_last_modified": modified, "cached": False}
 
 
-def parse_equity_workbook(path: Path, scheme_name: str, period_end: str) -> tuple[dict[str, float], float]:
+def parse_equity_workbook(
+    path: Path, scheme_name: str, period_end: str
+) -> tuple[dict[str, tuple[float, float, str]], float]:
     """Read only the listed Equity block and reconcile it with its published subtotal."""
     try:
         from openpyxl import load_workbook
@@ -94,7 +97,7 @@ def parse_equity_workbook(path: Path, scheme_name: str, period_end: str) -> tupl
             if sheet.cell(row, column).value != expected:
                 raise ValueError(f"Unexpected HDFC layout at {path}:{row},{column}")
 
-        holdings: dict[str, float] = {}
+        holdings: dict[str, tuple[float, float, str]] = {}
         subtotal = None
         for row in sheet.iter_rows(min_row=9, values_only=True):
             asset = row[1]
@@ -107,15 +110,18 @@ def parse_equity_workbook(path: Path, scheme_name: str, period_end: str) -> tupl
                 raise ValueError(f"Duplicate ISIN {asset} in {path}")
             weight = row[7]
             quantity = row[5]
+            name = row[3]
             if (not isinstance(weight, (int, float)) or not math.isfinite(weight)
                     or weight <= 0 or weight > 100):
                 raise ValueError(f"Invalid weight for {asset} in {path}: {weight!r}")
             if not isinstance(quantity, (int, float)) or not math.isfinite(quantity) or quantity <= 0:
                 raise ValueError(f"Invalid quantity for {asset} in {path}: {quantity!r}")
-            holdings[asset] = float(weight)
+            if not isinstance(name, str) or not name.strip():
+                raise ValueError(f"Missing instrument name for {asset} in {path}")
+            holdings[asset] = (float(weight), float(quantity), name.strip())
         if not holdings or not isinstance(subtotal, (int, float)) or not math.isfinite(subtotal):
             raise ValueError(f"Missing listed equity holdings or subtotal in {path}")
-        if abs(sum(holdings.values()) - subtotal) > 0.02:
+        if abs(sum(value[0] for value in holdings.values()) - subtotal) > 0.02:
             raise ValueError(f"Listed equity subtotal mismatch in {path}")
         return holdings, float(subtotal)
     finally:
@@ -157,10 +163,11 @@ def build_pilot(db, catalog_path: Path, raw_dir: Path, output_dir: Path) -> dict
             holdings, subtotal = parse_equity_workbook(
                 Path(file_audit["local_path"]), source["scheme_name"], period_end.isoformat()
             )
-            for asset, weight in sorted(holdings.items()):
+            for asset, (weight, quantity, name) in sorted(holdings.items()):
                 rows.append({"scheme_id": scheme_id, "asset_id": asset,
                              "period_end": period_end.isoformat(), "published_at": published,
-                             "weight_pct": f"{weight:.12g}", "source_url": source["url"]})
+                             "weight_pct": f"{weight:.12g}", "quantity": f"{quantity:.15g}",
+                             "instrument_name": name, "source_url": source["url"]})
             audit["snapshots"].append({"scheme_id": scheme_id, "period_end": period_end.isoformat(),
                                        "published_at": published, "availability_date": availability_date.isoformat(),
                                        "notice_date": notice_date.isoformat(),

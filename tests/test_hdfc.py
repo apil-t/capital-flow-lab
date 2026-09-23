@@ -43,6 +43,7 @@ class HdfcPilotTests(unittest.TestCase):
         sheet["B7"] = "(a) Listed / awaiting listing on Stock Exchanges"
         sheet["B8"] = "Equity"
         sheet["B9"] = "INE123456789"
+        sheet["D9"] = "Test Company Limited"
         sheet["F9"] = 100
         sheet["H9"] = weight
         sheet["B10"] = "Sub Total"
@@ -73,6 +74,8 @@ class HdfcPilotTests(unittest.TestCase):
         ]}))
         audit = build_pilot(self.db, catalog, self.raw, self.root / "output")
         self.assertEqual((audit["snapshot_count"], audit["holdings_count"]), (2, 2))
+        saved = self.db.execute("SELECT quantity, instrument_name FROM holdings LIMIT 1").fetchone()
+        self.assertEqual((saved["quantity"], saved["instrument_name"]), (100, "Test Company Limited"))
         self.assertEqual(rank(self.db, date(2026, 8, 7)), [])
         self.assertEqual(rank(self.db, date(2026, 8, 8))[0].asset_id, "INE123456789")
         self.assertEqual(rank(self.db, date(2026, 8, 8))[0].increasing_schemes, 1)
