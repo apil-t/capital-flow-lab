@@ -1,6 +1,6 @@
 # Capital Flow Lab
 
-An initial research project for the idea in the [shared conversation](https://chatgpt.com/share/6ab4194c-72fc-83ee-81c8-e5b7dcb33d34): test whether **publicly disclosed changes in Indian mutual-fund holdings** contain useful information about later stock returns. It ranks stocks by the breadth of scheme-level portfolio-weight increases, then measures later returns against a benchmark.
+Capital Flow Lab ranks Indian stocks using publicly disclosed changes in mutual-fund portfolios. It compares scheme-level portfolio weights and share counts using only disclosures available on each decision date, then measures subsequent stock returns against a benchmark.
 
 The demo data is **synthetic**. A separate, reproducible pilot imports real HDFC Mutual Fund disclosures and a short window of public return data. Neither output establishes that the rankings predict returns.
 
@@ -60,7 +60,7 @@ python scripts/nse_raw_prices.py --start 2026-08-01 --end 2026-09-23
 
 This writes `data/generated/nse_raw_closes.csv` and an audit manifest. **These closes are unadjusted and must not be imported directly.** The archive accepts NSE EQ and BE series, including a held security that moved between them during August. `build_return_prices.py` checks the pinned source hashes, compounds cash dividends on their ex-dates using the [NSE corporate-action feed](https://www.nseindia.com/companies-listing/corporate-filings-actions), excludes securities with other corporate actions, and imports a stock total-return index for each supported ISIN. It imports the official [Nifty 500 total-return index](https://www.niftyindices.com/reports/historical-data) as `NIFTY500_TRI`. This forward-indexed stock series preserves entry-to-exit total returns; its numeric level is not a rupee market price. The public sources can revise historical records, so a changed pinned response stops the build for review.
 
-## How this first version works
+## How it works
 
 1. Import a **complete** portfolio snapshot for each fund scheme and reporting period. Each snapshot has a period end, an availability cutoff with timezone, and a source URL. For the pilot, the cutoff follows the date-level rule above.
 2. At an `--as-of` date, select only snapshots whose stored availability cutoff has passed by the end of that date in India. A later correction stays invisible to earlier decisions.
@@ -106,10 +106,10 @@ flowrank compare --db data/research.sqlite --start 2020-01-01 --end 2025-12-31 -
 
 1. **Broader disclosure archive:** extend the pinned pilot across more schemes and years, including archived revisions. Verify first-publication timing where a timestamp is available. [AMFI has a portfolio disclosure portal](https://www.amfiindia.com/online-center/portfolio-disclosure); check coverage and download terms before scaling.
 2. **Longer return history:** extend the pinned August–September 2026 return pilot across the disclosure archive, with explicit treatment of splits, bonuses, buybacks, identifier changes, delistings, and missing closes. Keep original source data and adjustment provenance. The current NSE corporate-action review covers only the two pilot comparison intervals.
-3. **Research controls:** build historical Nifty 500 membership, delisted-stock coverage, liquidity filters, market-cap/sector baselines, and multiple horizons. Track missing data instead of silently dropping it. Evaluate on later untouched years after choosing rules on earlier years.
+3. **Research controls:** build historical Nifty 500 membership, delisted-stock coverage, liquidity filters, market-cap/sector baselines, and multiple horizons. Track missing data instead of silently dropping it. Evaluate on later untouched years after choosing rules on earlier years. Check scheme-level investor flows before interpreting share-count increases as discretionary buying.
 4. **Additional signals:** add published [NSE shareholding filings](https://www.nseindia.com/companies-listing/corporate-filings-shareholding-pattern), financial statements, insider filings and adjusted market data. Keep every feature tied to when it became public.
 5. **Model only if warranted:** compare any ML ranker with this frozen rules baseline on truly out-of-sample data. A more complex model is useful only if it improves the result after costs and realistic coverage rules.
 
 ### Current limits
 
-This is a research scaffold, not an investment recommendation or live trading system. The real-data pilot covers only three recent disclosure months, five schemes from one fund house, and 37 trading days of returns. It has a narrow corporate-action review for July–August 2026 and a short dividend-aware return series, but no full adjustment history, survivorship-safe historical universe, tax model, or executable portfolio simulation. One completed cohort cannot validate the investment hypothesis. A larger point-in-time archive and a preregistered historical test are still needed.
+This is a research scaffold, not an investment recommendation or live trading system. The real-data pilot covers only three recent disclosure months, five schemes from one fund house, and 37 trading days of returns. It has a narrow corporate-action review for July–August 2026 and a short dividend-aware return series, but no full adjustment history, investor-flow adjustment, survivorship-safe historical universe, tax model, or executable portfolio simulation. Share-count increases do not by themselves establish manager intent. One completed cohort cannot validate the investment hypothesis. A larger point-in-time archive and a preregistered historical test are still needed.
