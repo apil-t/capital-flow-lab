@@ -25,6 +25,12 @@ class NseSourceTests(unittest.TestCase):
                         "VALUES ('FUND','2026-06-30','2026-07-08T18:29:59+00:00','test://fund')")
         self.db.execute("INSERT INTO holdings(snapshot_id, asset_id, weight_pct, quantity) "
                         "VALUES (1,'INE123456789',2,100)")
+        self.db.execute("INSERT INTO holdings(snapshot_id, asset_id, weight_pct, quantity) "
+                        "VALUES (1,'IN9397D01014',0.02,50)")
+        self.db.execute("INSERT INTO holding_snapshots(scheme_id, period_end, published_at, source_url) "
+                        "VALUES ('FUND','2025-01-31','2025-02-10T18:29:59+00:00','test://old')")
+        self.db.execute("INSERT INTO holdings(snapshot_id, asset_id, weight_pct, quantity) "
+                        "VALUES (2,'INE999999999',1,50)")
         self.db.commit()
 
     def tearDown(self):

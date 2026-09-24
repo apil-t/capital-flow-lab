@@ -48,7 +48,16 @@ def _visible_snapshots(db: sqlite3.Connection, as_of: date) -> dict[str, list[sq
         if row["period_end"] not in periods[scheme] and len(selected[scheme]) < 2:
             selected[scheme].append(row)
             periods[scheme].add(row["period_end"])
-    return selected
+    # Sparse archives must not turn a gap of several months into a claimed
+    # month-on-month signal. Keep only adjacent reporting months.
+    return {scheme: pair for scheme, pair in selected.items()
+            if len(pair) == 2 and _adjacent_months(pair[1]["period_end"], pair[0]["period_end"])}
+
+
+def _adjacent_months(previous: str, current: str) -> bool:
+    older, newer = date.fromisoformat(previous), date.fromisoformat(current)
+    following = date(older.year + (older.month == 12), older.month % 12 + 1, 1)
+    return (newer.year, newer.month) == (following.year, following.month)
 
 
 def rank(db: sqlite3.Connection, as_of: date) -> list[Rank]:
@@ -71,6 +80,10 @@ def rank(db: sqlite3.Connection, as_of: date) -> list[Rank]:
             continue
         current, previous = holdings[snapshots[0]["id"]], holdings[snapshots[1]["id"]]
         for asset in current.keys() | previous.keys():
+            # IN9 identifies temporary/partly paid securities in this pilot.
+            # Their disappearance must not be reported as an ordinary-stock sale.
+            if asset.startswith("IN9"):
+                continue
             delta = current.get(asset, 0.0) - previous.get(asset, 0.0)
             if abs(delta) <= 0.01:  # ignore rounding noise in published weights
                 continue
@@ -138,6 +151,8 @@ def quantity_rank(db: sqlite3.Connection, as_of: date, allow_unreviewed_actions:
         current_date = date.fromisoformat(snapshots[0]["period_end"])
         previous_date = date.fromisoformat(snapshots[1]["period_end"])
         for asset in current.keys() | previous.keys():
+            if asset.startswith("IN9"):
+                continue
             if (asset in current and current[asset] is None or
                     asset in previous and previous[asset] is None):
                 incomplete_assets.add(asset)

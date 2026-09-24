@@ -106,6 +106,24 @@ class QuantityResearchTests(unittest.TestCase):
         checked = quantity_rank(self.db, date(2026, 8, 8))
         self.assertEqual([row.asset_id for row in checked], ["ASSET_A"])
 
+    def test_partly_paid_isin_is_preserved_but_not_ranked(self):
+        columns = ("scheme_id", "asset_id", "period_end", "published_at", "weight_pct",
+                   "quantity", "instrument_name", "source_url")
+        rows = [
+            ("FUND", "INE397D01024", "2025-03-31", "2025-04-24T23:59:59+05:30", 3.22,
+             3200000, "Bharti Airtel", "test://march"),
+            ("FUND", "IN9397D01014", "2025-03-31", "2025-04-24T23:59:59+05:30", 0.02,
+             28928, "Bharti Airtel partly paid", "test://march"),
+            ("FUND", "INE397D01024", "2025-04-30", "2025-05-10T23:59:59+05:30", 3.01,
+             3000000, "Bharti Airtel", "test://april"),
+        ]
+        import_holdings(self.db, self._csv("partly_paid.csv", columns, rows))
+        self.assertEqual([item.asset_id for item in rank(self.db, date(2025, 5, 10))],
+                         ["INE397D01024"])
+        quantity = quantity_rank(self.db, date(2025, 5, 10), allow_unreviewed_actions=True)
+        self.assertEqual([(item.asset_id, item.net_share_change) for item in quantity],
+                         [("INE397D01024", -200000)])
+
 
 if __name__ == "__main__":
     unittest.main()

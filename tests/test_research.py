@@ -62,6 +62,21 @@ class ResearchTests(unittest.TestCase):
         )
         self.assertEqual(results[0]["status"], "skipped")
 
+    def test_missing_reporting_month_is_not_ranked_as_monthly_change(self):
+        gap_db = connect(Path(self.temp.name) / "gap.sqlite")
+        try:
+            path = Path(self.temp.name) / "gap.csv"
+            path.write_text(
+                "scheme_id,asset_id,period_end,published_at,weight_pct,source_url\n"
+                "FUND_X,TEST00000001,2025-05-31,2025-06-10T23:59:59+05:30,1,synthetic://may\n"
+                "FUND_X,TEST00000001,2025-11-30,2025-12-10T23:59:59+05:30,5,synthetic://nov\n",
+                encoding="utf-8",
+            )
+            import_holdings(gap_db, path)
+            self.assertEqual(rank(gap_db, date(2025, 12, 15)), [])
+        finally:
+            gap_db.close()
+
 
 if __name__ == "__main__":
     unittest.main()

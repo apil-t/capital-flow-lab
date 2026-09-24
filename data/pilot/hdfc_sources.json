@@ -1,6 +1,798 @@
 {
-  "description": "Pinned HDFC monthly listed-equity portfolio pilot, five schemes, June-August 2026",
+  "description": "Pinned HDFC monthly listed-equity portfolios for five schemes; see each period for availability evidence",
   "periods": [
+    {
+      "period_end": "2025-01-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-02/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20January%202025.xlsx",
+          "sha256": "57035c230abb16c9e805ed9ac9e70ed0b815cc33166327f9d499d94237f7f920",
+          "observed_http_last_modified": "Fri, 07 Feb 2025 11:15:12 GMT",
+          "local_name": "2025-01-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-02/Monthly%20HDFC%20Focused%2030%20Fund%20-%2031%20January%202025.xlsx",
+          "sha256": "2e2890f7b4117f324acf5deb372391cd253764ec29df58f302a5fa4af7295755",
+          "observed_http_last_modified": "Fri, 07 Feb 2025 11:15:13 GMT",
+          "local_name": "2025-01-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused 30"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-02/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20January%202025.xlsx",
+          "sha256": "5cbb98f722ee018881035d21fa682c33acd6854563b05b4b22180be042dab91d",
+          "observed_http_last_modified": "Fri, 07 Feb 2025 11:15:14 GMT",
+          "local_name": "2025-01-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-02/Monthly%20HDFC%20Mid-Cap%20Opportunities%20Fund%20-%2031%20January%202025.xlsx",
+          "sha256": "425db435f1425795784555373eaab09829fb42902192b48ba5426786c49a6834",
+          "observed_http_last_modified": "Fri, 07 Feb 2025 11:15:14 GMT",
+          "local_name": "2025-01-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid-Cap Opportunities"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-02/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20January%202025.xlsx",
+          "sha256": "79d5e57bd83da5f0155df9b7bf9b4312d8da9d30565435f2745bf79143b343b2",
+          "observed_http_last_modified": "Fri, 07 Feb 2025 11:15:19 GMT",
+          "local_name": "2025-01-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-02-28",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-03/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2028%20February%202025.xlsx",
+          "sha256": "8c1633fbc0f41e9358fb0d18feaae70fac7aaec5dea1e0c0b1139d74d30fbe6c",
+          "observed_http_last_modified": "Mon, 10 Mar 2025 13:01:50 GMT",
+          "local_name": "2025-02-28_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-03/Monthly%20HDFC%20Focused%2030%20Fund%20-%2028%20February%202025.xlsx",
+          "sha256": "72d3913b80590811cb88daca1a0c69f6cab86ce2dc519038df015675054155e3",
+          "observed_http_last_modified": "Mon, 10 Mar 2025 13:01:52 GMT",
+          "local_name": "2025-02-28_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused 30"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-03/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2028%20February%202025.xlsx",
+          "sha256": "558580c487577bbce91b1278aed3dbf492e29815c768096f34cd99c9b5eb83a3",
+          "observed_http_last_modified": "Mon, 10 Mar 2025 13:01:53 GMT",
+          "local_name": "2025-02-28_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-03/Monthly%20HDFC%20Mid-Cap%20Opportunities%20Fund%20-%2028%20February%202025.xlsx",
+          "sha256": "56731a75a40fbc14aee825d91f097e18262eda845a680a32a850f551d29fb367",
+          "observed_http_last_modified": "Mon, 10 Mar 2025 13:01:53 GMT",
+          "local_name": "2025-02-28_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid-Cap Opportunities"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-03/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2028%20February%202025.xlsx",
+          "sha256": "173fa74ce621fb4dada58c7eb6802544506bbac07f01cf0f83ad523240fa5acb",
+          "observed_http_last_modified": "Mon, 10 Mar 2025 13:01:59 GMT",
+          "local_name": "2025-02-28_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-03-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-04/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20March%202025.xlsx",
+          "sha256": "0a668c10e3461cac35b09b49247e7c342bbe5e1c97c7c08a5a71dd29cd638f8f",
+          "observed_http_last_modified": "Thu, 24 Apr 2025 12:48:04 GMT",
+          "local_name": "2025-03-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-04/Monthly%20HDFC%20Focused%2030%20Fund%20-%2031%20March%202025.xlsx",
+          "sha256": "8cac63c42010f0bfa470b2fa06ad88cbf40108d81f815f20f8f5aa04f328bf59",
+          "observed_http_last_modified": "Thu, 24 Apr 2025 12:48:05 GMT",
+          "local_name": "2025-03-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused 30"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-04/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20March%202025.xlsx",
+          "sha256": "31574bfc1221fea421bc0ec191c802b7693c7117abb55ac410b96a58746eecdd",
+          "observed_http_last_modified": "Thu, 24 Apr 2025 12:48:06 GMT",
+          "local_name": "2025-03-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-04/Monthly%20HDFC%20Mid-Cap%20Opportunities%20Fund%20-%2031%20March%202025.xlsx",
+          "sha256": "58e5e1f48617691292af862463bcb41488f719ea5076deb7d64ffbe6fde87402",
+          "observed_http_last_modified": "Thu, 24 Apr 2025 12:48:07 GMT",
+          "local_name": "2025-03-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid-Cap Opportunities"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-04/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20March%202025.xlsx",
+          "sha256": "9322ec5f7a293cd5b091d8c4fcaed39ef2d5846b7c601ca3ddc43139583b97e3",
+          "observed_http_last_modified": "Thu, 24 Apr 2025 12:48:13 GMT",
+          "local_name": "2025-03-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-04-30",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-05/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2030%20April%202025.xlsx",
+          "sha256": "0ec2d9e7ef40b1c095fe39b22f87d0036773af64eb0f57a09b6c8296f653c6ed",
+          "observed_http_last_modified": "Fri, 09 May 2025 07:56:37 GMT",
+          "local_name": "2025-04-30_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-05/Monthly%20HDFC%20Focused%2030%20Fund%20-%2030%20April%202025.xlsx",
+          "sha256": "ad424d6f5ed82606c6b9fc104bce4e2992d02f09d6ebb8354e35342d79ee86d1",
+          "observed_http_last_modified": "Fri, 09 May 2025 07:56:37 GMT",
+          "local_name": "2025-04-30_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused 30"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-05/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2030%20April%202025.xlsx",
+          "sha256": "91d62618123a412eadf392faaeeb86c10572ea8d82776b3ecd672b382302d17e",
+          "observed_http_last_modified": "Fri, 09 May 2025 07:56:43 GMT",
+          "local_name": "2025-04-30_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-05/Monthly%20HDFC%20Mid-Cap%20Opportunities%20Fund%20-%2030%20April%202025.xlsx",
+          "sha256": "6290b09ad54755c15c8ba11314cb451c3a9ed4f58d60282067e39cb2e894883e",
+          "observed_http_last_modified": "Fri, 09 May 2025 07:56:39 GMT",
+          "local_name": "2025-04-30_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid-Cap Opportunities"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-05/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2030%20April%202025.xlsx",
+          "sha256": "ce149386c6054a52c56bc352f742d4bdb2e93cd0846478861bc5c2401f5eac71",
+          "observed_http_last_modified": "Fri, 09 May 2025 07:56:41 GMT",
+          "local_name": "2025-04-30_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-05-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-06/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20May%202025.xlsx",
+          "sha256": "f9ed38c49a6dada8f0f47742f9942052901e3ecc8b57cffe31d46744515a4062",
+          "observed_http_last_modified": "Mon, 09 Jun 2025 08:01:47 GMT",
+          "local_name": "2025-05-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-06/Monthly%20HDFC%20Focused%2030%20Fund%20-%2031%20May%202025.xlsx",
+          "sha256": "b8afbb7d86af8e7d98b87e0004e19a4da673a516ee27a0434757534f8efc48c6",
+          "observed_http_last_modified": "Mon, 09 Jun 2025 08:01:40 GMT",
+          "local_name": "2025-05-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused 30"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-06/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20May%202025.xlsx",
+          "sha256": "d2e7fdb31cbc207d368bee9aa657420d86bb1611e19e7d1e7bdc88a7ba16ddd3",
+          "observed_http_last_modified": "Mon, 09 Jun 2025 08:01:40 GMT",
+          "local_name": "2025-05-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-06/Monthly%20HDFC%20Mid-Cap%20Opportunities%20Fund%20-%2031%20May%202025.xlsx",
+          "sha256": "9deedd0038730eb1b44db5cce74b864b04feb9257d7d7c941ea3ddb0737c76df",
+          "observed_http_last_modified": "Mon, 09 Jun 2025 08:01:37 GMT",
+          "local_name": "2025-05-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid-Cap Opportunities"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-06/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20May%202025.xlsx",
+          "sha256": "422e88a9861a16f6520e62af5726c557fbbb9003714d7e4b2928582e514618ef",
+          "observed_http_last_modified": "Mon, 09 Jun 2025 08:01:38 GMT",
+          "local_name": "2025-05-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-06-30",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2030%20June%202025.xlsx",
+          "sha256": "d6004863246776b9a2d024b3bcbe2da8a883611e1a3a1bfe9e2738997b06a755",
+          "observed_http_last_modified": "Wed, 09 Jul 2025 07:30:53 GMT",
+          "local_name": "2025-06-30_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2030%20June%202025.xlsx",
+          "sha256": "9c54efb5b3b6934e17e4c23eed8af9a1ece44824b43172fd6f8f3e7382d41ab4",
+          "observed_http_last_modified": "Wed, 09 Jul 2025 07:30:55 GMT",
+          "local_name": "2025-06-30_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2030%20June%202025.xlsx",
+          "sha256": "fd8881172ffc9c78b2a844d139acedbf60937893fe7d63fff59854057f90c757",
+          "observed_http_last_modified": "Wed, 09 Jul 2025 07:30:56 GMT",
+          "local_name": "2025-06-30_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2030%20June%202025.xlsx",
+          "sha256": "a1f444582da56dfc3e5259b9ee7f6a153d294a2d457fc5589d2c73556278a869",
+          "observed_http_last_modified": "Wed, 09 Jul 2025 07:30:57 GMT",
+          "local_name": "2025-06-30_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2030%20June%202025.xlsx",
+          "sha256": "9ac6cf2f0e940be41226d4dfe1924625102a862a6ddd590c087313f4610d6b72",
+          "observed_http_last_modified": "Wed, 09 Jul 2025 07:31:03 GMT",
+          "local_name": "2025-06-30_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-07-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20July%202025.xlsx",
+          "sha256": "0d63a970333b1e663f51e57fc6267b0eb1e3878ea2d210576ee47d36017ce818",
+          "observed_http_last_modified": "Thu, 07 Aug 2025 10:00:03 GMT",
+          "local_name": "2025-07-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2031%20July%202025.xlsx",
+          "sha256": "75b1667196b17ae7352b73a6ae013cf2b02d0980b593e6a805d63e23c9db4021",
+          "observed_http_last_modified": "Thu, 07 Aug 2025 10:00:05 GMT",
+          "local_name": "2025-07-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20July%202025.xlsx",
+          "sha256": "6525d509274fd326d9cd395e733f6be42e5656e3e06c3beccb964cac32ad0fb4",
+          "observed_http_last_modified": "Thu, 07 Aug 2025 10:00:07 GMT",
+          "local_name": "2025-07-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2031%20July%202025.xlsx",
+          "sha256": "4e3e62e02beba38968dbe5871070457bfc3aeb17318e1168376f89a5ecbb0fd1",
+          "observed_http_last_modified": "Thu, 07 Aug 2025 10:00:08 GMT",
+          "local_name": "2025-07-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20July%202025.xlsx",
+          "sha256": "32d9bf8b58eed85bc9644579315f1f496e57010e10313c85391d49af1d14f09a",
+          "observed_http_last_modified": "Thu, 07 Aug 2025 10:00:14 GMT",
+          "local_name": "2025-07-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-08-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20August%202025.xlsx",
+          "sha256": "6c9491c404af128a8ef9dd5d6bf5c127f827a1cd87fa65e48d7f7916d0846f87",
+          "observed_http_last_modified": "Tue, 09 Sep 2025 08:06:50 GMT",
+          "local_name": "2025-08-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2031%20August%202025.xlsx",
+          "sha256": "8d0baa89f3997321c98c639f39a510a412b20bcb811a6a7712786b7359cd87d0",
+          "observed_http_last_modified": "Tue, 09 Sep 2025 08:06:51 GMT",
+          "local_name": "2025-08-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20August%202025.xlsx",
+          "sha256": "d1bcfb98b16d1bfd266655bf9396b003798167dbef671c1781ffe114e603a5af",
+          "observed_http_last_modified": "Tue, 09 Sep 2025 08:06:52 GMT",
+          "local_name": "2025-08-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2031%20August%202025.xlsx",
+          "sha256": "c472811d0091ba018862760c4c91387953b977320ff1a53aee7692e975a96435",
+          "observed_http_last_modified": "Tue, 09 Sep 2025 08:06:53 GMT",
+          "local_name": "2025-08-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20August%202025.xlsx",
+          "sha256": "0eac54c6a846c20164b9b67cd07ec6bcacea4f6d1635db57c616fc9c48ed74f1",
+          "observed_http_last_modified": "Tue, 09 Sep 2025 08:06:59 GMT",
+          "local_name": "2025-08-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-09-30",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2030%20September%202025.xlsx",
+          "sha256": "4a4f0a8ea406bb88b0a5b32f2d744fba903e018f26657061dad840bbe724194e",
+          "observed_http_last_modified": "Tue, 07 Oct 2025 09:06:54 GMT",
+          "local_name": "2025-09-30_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2030%20September%202025.xlsx",
+          "sha256": "d89788595ee2da2cecc6df5432d38cece52f5b82c58d913095f68a99322125e5",
+          "observed_http_last_modified": "Tue, 07 Oct 2025 09:06:54 GMT",
+          "local_name": "2025-09-30_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2030%20September%202025.xlsx",
+          "sha256": "4037f8e9595a9e930a98c5e300df6db61c6ed6ab4ce2de9710dd8a55258858d7",
+          "observed_http_last_modified": "Tue, 07 Oct 2025 09:06:56 GMT",
+          "local_name": "2025-09-30_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2030%20September%202025.xlsx",
+          "sha256": "5489b4dce0bc891a9a3c5e635575498c522fb8e4cae21394ad745b52a428af6e",
+          "observed_http_last_modified": "Tue, 07 Oct 2025 09:06:56 GMT",
+          "local_name": "2025-09-30_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2030%20September%202025.xlsx",
+          "sha256": "87de15e9d19e422d7c60de9982b6dba7d39392f79e1f63f0f6b22382f40d0945",
+          "observed_http_last_modified": "Tue, 07 Oct 2025 09:07:02 GMT",
+          "local_name": "2025-09-30_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-10-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20October%202025.xlsx",
+          "sha256": "dddd554c86851241613acfc28da1722b1930131641ced789e2b5e3e067d9d7e3",
+          "observed_http_last_modified": "Sat, 08 Nov 2025 11:06:18 GMT",
+          "local_name": "2025-10-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2031%20October%202025.xlsx",
+          "sha256": "ade8d8eb875d072f8da434ce036f617ea075d3362b60e1d670ff26b29d091742",
+          "observed_http_last_modified": "Sat, 08 Nov 2025 11:06:19 GMT",
+          "local_name": "2025-10-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20October%202025.xlsx",
+          "sha256": "8d2a865a78e51c192b1732168bc26a1d0a8dec4f325549ad9e6b7bfb2e42745f",
+          "observed_http_last_modified": "Sat, 08 Nov 2025 11:06:20 GMT",
+          "local_name": "2025-10-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2031%20October%202025.xlsx",
+          "sha256": "38681c420834eed8b45aff33b93ed55dcadec4f14c446232556d842a540beb60",
+          "observed_http_last_modified": "Sat, 08 Nov 2025 11:06:20 GMT",
+          "local_name": "2025-10-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap",
+          "link_basis": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20October%202025.xlsx",
+          "sha256": "6a5e0effbd4b7122373f1fe3edcd8dc1c445eb5006b8859fdc12113dd1c57ed7",
+          "observed_http_last_modified": "Sat, 08 Nov 2025 11:06:24 GMT",
+          "local_name": "2025-10-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-11-30",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-12/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2030%20November%202025.xlsx",
+          "sha256": "9fc67808bcef34087d79da56199261563a5d90d919b2f9a1093d2a4cdb751ae2",
+          "observed_http_last_modified": "Mon, 08 Dec 2025 15:09:20 GMT",
+          "local_name": "2025-11-30_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-12/Monthly%20HDFC%20Focused%20Fund%20-%2030%20November%202025.xlsx",
+          "sha256": "ec7517fa947158b86111ceb05c6a304e8ed154831df58eb3842a0769bac94021",
+          "observed_http_last_modified": "Mon, 08 Dec 2025 15:09:21 GMT",
+          "local_name": "2025-11-30_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-12/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2030%20November%202025.xlsx",
+          "sha256": "a3c3cb7871027e8fc611456a11df25a2aaaab43b38a28fe812a19ef1b5f7336a",
+          "observed_http_last_modified": "Mon, 08 Dec 2025 15:09:22 GMT",
+          "local_name": "2025-11-30_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-12/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2030%20November%202025.xlsx",
+          "sha256": "529ac9d2f640d3c31521e8f7887da64e7ee74b31dbbcca1be7db41b819dc1ed7",
+          "observed_http_last_modified": "Mon, 08 Dec 2025 15:09:22 GMT",
+          "local_name": "2025-11-30_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2025-12/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2030%20November%202025.xlsx",
+          "sha256": "65ca29f9754cce55f2c650bf0629f464ed12ca19fa22422097bcd908a18cd442",
+          "observed_http_last_modified": "Mon, 08 Dec 2025 15:09:26 GMT",
+          "local_name": "2025-11-30_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2025-12-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-01/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20December%202025.xlsx",
+          "sha256": "e31adf7313ca65507512d6beb7f47c9e40fa9720a5ef6901e085e0eeecf0ecdb",
+          "observed_http_last_modified": "Thu, 08 Jan 2026 10:24:40 GMT",
+          "local_name": "2025-12-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-01/Monthly%20HDFC%20Focused%20Fund%20-%2031%20December%202025.xlsx",
+          "sha256": "61a823122c1e6f3b16020693a68b34ce0f8522c5c858ad687417051310fac3fa",
+          "observed_http_last_modified": "Thu, 08 Jan 2026 10:24:41 GMT",
+          "local_name": "2025-12-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-01/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20December%202025.xlsx",
+          "sha256": "3d7626e16540e822b12aafb1e320c8da0a945dde0d4c6c72fa686a476e9e545e",
+          "observed_http_last_modified": "Thu, 08 Jan 2026 10:24:42 GMT",
+          "local_name": "2025-12-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-01/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2031%20December%202025.xlsx",
+          "sha256": "3dbe74f10138d92a0781627731fa5e134860c2fdc26dca7879d804f8c6bba351",
+          "observed_http_last_modified": "Thu, 08 Jan 2026 10:24:42 GMT",
+          "local_name": "2025-12-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-01/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20December%202025.xlsx",
+          "sha256": "52a222f652aab8e4d9ea68b12afab4dd7d421f224a6326809e8c0f599f186101",
+          "observed_http_last_modified": "Thu, 08 Jan 2026 10:24:46 GMT",
+          "local_name": "2025-12-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-01-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-02/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20January%202026.xlsx",
+          "sha256": "fb7f4186410edf1682d8efc340b2becfec50f57d331145fa8f7ca4e99d2f3984",
+          "observed_http_last_modified": "Sat, 07 Feb 2026 12:10:42 GMT",
+          "local_name": "2026-01-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-02/Monthly%20HDFC%20Focused%20Fund%20-%2031%20January%202026.xlsx",
+          "sha256": "e747cf310aedb6500a6d0d2fb7f8ff5be11a25dc42fa320dec7ae2a8d5539b53",
+          "observed_http_last_modified": "Sat, 07 Feb 2026 12:10:43 GMT",
+          "local_name": "2026-01-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-02/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20January%202026.xlsx",
+          "sha256": "1cbc0fdd20a7c6f9fec96402a2a942289665b265f8ad909a892b2290ebd95592",
+          "observed_http_last_modified": "Sat, 07 Feb 2026 12:10:43 GMT",
+          "local_name": "2026-01-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-02/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2031%20January%202026.xlsx",
+          "sha256": "0f086237b3c0617a62d5b9f698e43544ba666fc644d692d22a10a82e4bb27164",
+          "observed_http_last_modified": "Sat, 07 Feb 2026 12:10:44 GMT",
+          "local_name": "2026-01-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-02/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20January%202026.xlsx",
+          "sha256": "86d49a92d00171346f19556581fa679dcd120df2109a0bdb699c3ffadc7cff02",
+          "observed_http_last_modified": "Sat, 07 Feb 2026 12:10:47 GMT",
+          "local_name": "2026-01-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-02-28",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-03/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2028%20February%202026.xlsx",
+          "sha256": "f88b8f14e437fe0ddffd115a7d685c07babed03a49ae2923ab56d51dbfe4a2c9",
+          "observed_http_last_modified": "Mon, 09 Mar 2026 10:12:40 GMT",
+          "local_name": "2026-02-28_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-03/Monthly%20HDFC%20Focused%20Fund%20-%2028%20February%202026.xlsx",
+          "sha256": "786d9dafc4ebe68ea1de78f977ed15b8400d7a5792efba34bb4ddc40ad74f7a9",
+          "observed_http_last_modified": "Mon, 09 Mar 2026 10:12:41 GMT",
+          "local_name": "2026-02-28_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-03/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2028%20February%202026.xlsx",
+          "sha256": "91940cca9c6071ef203497fc9f05d851b531a346f449077251b182295dc403a7",
+          "observed_http_last_modified": "Mon, 09 Mar 2026 10:12:38 GMT",
+          "local_name": "2026-02-28_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-03/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2028%20February%202026.xlsx",
+          "sha256": "69715e00ab3eeb90bbc603e62e5e3dbcce59de0e71c36ca75003306877739230",
+          "observed_http_last_modified": "Mon, 09 Mar 2026 10:12:38 GMT",
+          "local_name": "2026-02-28_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-03/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2028%20February%202026.xlsx",
+          "sha256": "632b7f737f81b0c9d436331062530c9cbb0c6e5ac0517a32e8991eb3829258a4",
+          "observed_http_last_modified": "Mon, 09 Mar 2026 11:37:47 GMT",
+          "local_name": "2026-02-28_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-03-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-04/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20March%202026.xlsx",
+          "sha256": "b710b25a4dcef20d3d70e5b64efb9d9bcad06bf19f4d65673f67529b604dc3e7",
+          "observed_http_last_modified": "Wed, 08 Apr 2026 15:33:23 GMT",
+          "local_name": "2026-03-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-04/Monthly%20HDFC%20Focused%20Fund%20-%2031%20March%202026.xlsx",
+          "sha256": "70d6d493a1372f5babc495d9c39aac7ed4a0b79ce46ff8ce28b6a25cea93e85c",
+          "observed_http_last_modified": "Wed, 08 Apr 2026 15:33:24 GMT",
+          "local_name": "2026-03-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-04/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20March%202026.xlsx",
+          "sha256": "87af23ecaa26836207c35b6e794df21a0862d89f1ba2831032e5369bb1c95ad3",
+          "observed_http_last_modified": "Wed, 08 Apr 2026 15:33:24 GMT",
+          "local_name": "2026-03-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-04/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2031%20March%202026.xlsx",
+          "sha256": "905979018d810f5e128767ae6ac4a90466abb5b3321e929ee276ffb532c11a45",
+          "observed_http_last_modified": "Wed, 08 Apr 2026 15:36:22 GMT",
+          "local_name": "2026-03-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-04/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20March%202026.xlsx",
+          "sha256": "82098751f9977888758bc79deab5b5d000f40c7c8fb65030232e114178a05496",
+          "observed_http_last_modified": "Wed, 08 Apr 2026 15:34:42 GMT",
+          "local_name": "2026-03-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-04-30",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-05/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2030%20April%202026.xlsx",
+          "sha256": "2fff82e81a405e6cd36394e79d8727a522a669e5ddd8e627af49f32f2229ef5c",
+          "observed_http_last_modified": "Sat, 09 May 2026 07:32:52 GMT",
+          "local_name": "2026-04-30_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-05/Monthly%20HDFC%20Focused%20Fund%20-%2030%20April%202026.xlsx",
+          "sha256": "2849e28b338de94981fb0bb4d2501d24d59a151990a613f5da52ea645d1cd819",
+          "observed_http_last_modified": "Sat, 09 May 2026 07:32:52 GMT",
+          "local_name": "2026-04-30_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-05/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2030%20April%202026.xlsx",
+          "sha256": "44332b8cfbe7634cea51b9683020e694fc094601f2570335796177e78c20824a",
+          "observed_http_last_modified": "Sat, 09 May 2026 07:32:53 GMT",
+          "local_name": "2026-04-30_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-05/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2030%20April%202026.xlsx",
+          "sha256": "8e63005c47bc2cc9ac6a109f1481e4c56eb9303a016cfed65150bf55684fa73c",
+          "observed_http_last_modified": "Sat, 09 May 2026 07:32:54 GMT",
+          "local_name": "2026-04-30_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-05/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2030%20April%202026.xlsx",
+          "sha256": "f8669f8e98ca10be183a4792d466c3073bd5999fd398739a971982e21d0b56a0",
+          "observed_http_last_modified": "Sat, 09 May 2026 07:33:00 GMT",
+          "local_name": "2026-04-30_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
+    {
+      "period_end": "2026-05-31",
+      "availability_rule": "file_last_modified_plus_10_calendar_days",
+      "sources": [
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-06/Monthly%20HDFC%20Flexi%20Cap%20Fund%20-%2031%20May%202026.xlsx",
+          "sha256": "f2acf2c055e89275725eaf49418b87371c15c473cd66e4b6188eb93b66ba46a6",
+          "observed_http_last_modified": "Tue, 09 Jun 2026 06:54:12 GMT",
+          "local_name": "2026-05-31_flexi_cap.xlsx",
+          "scheme_id": "HDFC_FLEXI_CAP",
+          "scheme_name": "Flexi Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-06/Monthly%20HDFC%20Focused%20Fund%20-%2031%20May%202026.xlsx",
+          "sha256": "e18847d8e70844ab17b4ec759a89cfdd938fb06a8e6c6fc044474c1fb33b702a",
+          "observed_http_last_modified": "Tue, 09 Jun 2026 06:54:12 GMT",
+          "local_name": "2026-05-31_focused.xlsx",
+          "scheme_id": "HDFC_FOCUSED",
+          "scheme_name": "Focused"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-06/Monthly%20HDFC%20Large%20Cap%20Fund%20-%2031%20May%202026.xlsx",
+          "sha256": "14685e4e2ff1304821a6c43b0e5374313aaec45f1326c1894d416b57709709ef",
+          "observed_http_last_modified": "Tue, 09 Jun 2026 06:54:13 GMT",
+          "local_name": "2026-05-31_large_cap.xlsx",
+          "scheme_id": "HDFC_LARGE_CAP",
+          "scheme_name": "Large Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-06/Monthly%20HDFC%20Mid%20Cap%20Fund%20-%2031%20May%202026.xlsx",
+          "sha256": "0de5b663a8fccecad3cc494897e8bb0f4cabcea0ae8e93a912b9964cbf6f2cee",
+          "observed_http_last_modified": "Tue, 09 Jun 2026 06:54:13 GMT",
+          "local_name": "2026-05-31_mid_cap.xlsx",
+          "scheme_id": "HDFC_MID_CAP",
+          "scheme_name": "Mid Cap"
+        },
+        {
+          "url": "https://files.hdfcfund.com/s3fs-public/2026-06/Monthly%20HDFC%20Small%20Cap%20Fund%20-%2031%20May%202026.xlsx",
+          "sha256": "60914d457e09f0f8fa3fed8cbb2a9b0254f6fc9a48bdb55c55def51d94a169ea",
+          "observed_http_last_modified": "Tue, 09 Jun 2026 06:54:19 GMT",
+          "local_name": "2026-05-31_small_cap.xlsx",
+          "scheme_id": "HDFC_SMALL_CAP",
+          "scheme_name": "Small Cap"
+        }
+      ]
+    },
     {
       "period_end": "2026-06-30",
       "notice_date": "2026-07-08",

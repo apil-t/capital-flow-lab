@@ -5,7 +5,7 @@ import hashlib
 import json
 import math
 import re
-from datetime import date, datetime, time, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -14,9 +14,9 @@ from zoneinfo import ZoneInfo
 from .storage import import_holdings
 
 
-PARSER_VERSION = "hdfc-listed-equity-v2"
+PARSER_VERSION = "hdfc-listed-equity-v3"
 IST = ZoneInfo("Asia/Kolkata")
-ISIN = re.compile(r"^INE[A-Z0-9]{9}$")
+ISIN = re.compile(r"^IN[A-Z0-9]{10}$")
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"
 PORTFOLIO_PAGE = "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
 NOTICE_PAGE = "https://www.hdfcfund.com/statutory-disclosure/portfolio/notices-portfolio"
@@ -111,8 +111,13 @@ def parse_equity_workbook(
             weight = row[7]
             quantity = row[5]
             name = row[3]
+            if weight == "@":
+                # HDFC prints this marker for a holding below 0.01% of NAV.
+                # Its share quantity is still usable; zero is the conservative
+                # numeric representation of its rounded portfolio weight.
+                weight = 0.0
             if (not isinstance(weight, (int, float)) or not math.isfinite(weight)
-                    or weight <= 0 or weight > 100):
+                    or weight < 0 or weight > 100):
                 raise ValueError(f"Invalid weight for {asset} in {path}: {weight!r}")
             if not isinstance(quantity, (int, float)) or not math.isfinite(quantity) or quantity <= 0:
                 raise ValueError(f"Invalid quantity for {asset} in {path}: {quantity!r}")
@@ -121,6 +126,10 @@ def parse_equity_workbook(
             holdings[asset] = (float(weight), float(quantity), name.strip())
         if not holdings or not isinstance(subtotal, (int, float)) or not math.isfinite(subtotal):
             raise ValueError(f"Missing listed equity holdings or subtotal in {path}")
+        if any(weight == 0 for weight, _, _ in holdings.values()):
+            if not any("@ Less than 0.01%." in str(row[1])
+                       for row in sheet.iter_rows(values_only=True) if len(row) > 1):
+                raise ValueError(f"Missing explanation of '@' weight marker in {path}")
         if abs(sum(value[0] for value in holdings.values()) - subtotal) > 0.02:
             raise ValueError(f"Listed equity subtotal mismatch in {path}")
         return holdings, float(subtotal)
@@ -133,16 +142,24 @@ def build_pilot(db, catalog_path: Path, raw_dir: Path, output_dir: Path) -> dict
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     rows = []
     audit = {"parser_version": PARSER_VERSION,
-             "availability_basis": "end of later notice or HTTP Last-Modified date in Asia/Kolkata; exact public release time unverified",
+             "availability_basis": "end of later notice or HTTP Last-Modified date; when no notice is pinned, also wait 10 calendar days after month end; exact first-publication time unverified",
              "snapshots": []}
     seen = set()
     for period in catalog["periods"]:
         period_end = date.fromisoformat(period["period_end"])
-        notice_date = date.fromisoformat(period["notice_date"])
-        if notice_date <= period_end:
-            raise ValueError(f"Notice does not follow reporting period: {period_end}")
-        notice_file = _fetch(period["notice"], raw_dir, NOTICE_PAGE)
-        notice_file["observed_http_last_modified"] = period["notice"].get("observed_http_last_modified")
+        if "notice" in period:
+            notice_date = date.fromisoformat(period["notice_date"])
+            if notice_date <= period_end:
+                raise ValueError(f"Notice does not follow reporting period: {period_end}")
+            notice_file = _fetch(period["notice"], raw_dir, NOTICE_PAGE)
+            notice_file["observed_http_last_modified"] = period["notice"].get("observed_http_last_modified")
+            availability_basis = "notice_and_file_dates"
+        elif period.get("availability_rule") == "file_last_modified_plus_10_calendar_days":
+            notice_date = None
+            notice_file = None
+            availability_basis = "unverified_file_date_proxy"
+        else:
+            raise ValueError(f"Missing notice or supported availability rule for {period_end}")
         for source in period["sources"]:
             scheme_id = source["scheme_id"]
             key = (scheme_id, period_end.isoformat())
@@ -151,14 +168,17 @@ def build_pilot(db, catalog_path: Path, raw_dir: Path, output_dir: Path) -> dict
             seen.add(key)
             file_audit = _fetch(source, raw_dir, PORTFOLIO_PAGE)
             file_audit["observed_http_last_modified"] = source.get("observed_http_last_modified")
-            availability_date = max(
-                day for day in (notice_date,
-                                _modified_day(notice_file["http_last_modified"]),
-                                _modified_day(notice_file["observed_http_last_modified"]),
-                                _modified_day(file_audit["http_last_modified"]),
-                                _modified_day(file_audit["observed_http_last_modified"]))
-                if day is not None
-            )
+            file_dates = (_modified_day(file_audit["http_last_modified"]),
+                          _modified_day(file_audit["observed_http_last_modified"]))
+            if not notice_file and not any(file_dates):
+                raise ValueError(f"No observed HTTP Last-Modified for {source['url']}")
+            if notice_file:
+                candidates = (notice_date,
+                              _modified_day(notice_file["http_last_modified"]),
+                              _modified_day(notice_file["observed_http_last_modified"]), *file_dates)
+            else:
+                candidates = (period_end + timedelta(days=10), *file_dates)
+            availability_date = max(day for day in candidates if day is not None)
             published = datetime.combine(availability_date, time(23, 59, 59), IST).isoformat()
             holdings, subtotal = parse_equity_workbook(
                 Path(file_audit["local_path"]), source["scheme_name"], period_end.isoformat()
@@ -170,8 +190,10 @@ def build_pilot(db, catalog_path: Path, raw_dir: Path, output_dir: Path) -> dict
                              "instrument_name": name, "source_url": source["url"]})
             audit["snapshots"].append({"scheme_id": scheme_id, "period_end": period_end.isoformat(),
                                        "published_at": published, "availability_date": availability_date.isoformat(),
-                                       "notice_date": notice_date.isoformat(),
-                                       "notice_url": period["notice"]["url"], "notice_file": notice_file,
+                                       "availability_basis": availability_basis,
+                                       "notice_date": notice_date.isoformat() if notice_date else None,
+                                       "notice_url": period["notice"]["url"] if notice_file else None,
+                                       "notice_file": notice_file,
                                        "source_url": source["url"], "source_file": file_audit,
                                        "equity_count": len(holdings), "equity_subtotal_pct": subtotal})
     if not rows:

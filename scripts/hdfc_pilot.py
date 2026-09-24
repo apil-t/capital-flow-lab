@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch and load the pinned three-month HDFC pilot."""
+"""Fetch and load the pinned HDFC portfolio history."""
 
 import argparse
 import json

@@ -1,0 +1,26 @@
+{
+  "source_page": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio",
+  "observed_on": "2026-09-24",
+  "periods": {
+    "2025-06-30": {
+      "HDFC_FOCUSED": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2030%20June%202025.xlsx",
+      "HDFC_MID_CAP": "https://files.hdfcfund.com/s3fs-public/2025-07/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2030%20June%202025.xlsx"
+    },
+    "2025-07-31": {
+      "HDFC_FOCUSED": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2031%20July%202025.xlsx",
+      "HDFC_MID_CAP": "https://files.hdfcfund.com/s3fs-public/2025-08/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2031%20July%202025.xlsx"
+    },
+    "2025-08-31": {
+      "HDFC_FOCUSED": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2031%20August%202025.xlsx",
+      "HDFC_MID_CAP": "https://files.hdfcfund.com/s3fs-public/2025-09/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2031%20August%202025.xlsx"
+    },
+    "2025-09-30": {
+      "HDFC_FOCUSED": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2030%20September%202025.xlsx",
+      "HDFC_MID_CAP": "https://files.hdfcfund.com/s3fs-public/2025-10/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2030%20September%202025.xlsx"
+    },
+    "2025-10-31": {
+      "HDFC_FOCUSED": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Focused%20Fund%20%28Formerly%20known%20as%20HDFC%20Focused%2030%20Fund%20-%2031%20October%202025.xlsx",
+      "HDFC_MID_CAP": "https://files.hdfcfund.com/s3fs-public/2025-11/Monthly%20HDFC%20Mid%20Cap%20Fund%20%28Formerly%20known%20as%20HDFC%20Mid-Cap%20Opportunities%20Fund%29%20-%2031%20October%202025.xlsx"
+    }
+  }
+}

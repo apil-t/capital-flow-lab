@@ -92,6 +92,32 @@ class HdfcPilotTests(unittest.TestCase):
             build_pilot(self.db, catalog, self.raw, self.root / "output")
         self.assertEqual(self.db.execute("SELECT count(*) FROM holding_snapshots").fetchone()[0], 0)
 
+    def test_tiny_published_weight_keeps_quantity(self):
+        source = self._workbook("tiny.xlsx", "2026-05-31", 0)
+        path = self.raw / source["local_name"]
+        from openpyxl import load_workbook
+        book = load_workbook(path)
+        sheet = book.active
+        sheet["H9"] = "@"
+        sheet["B12"] = "@ Less than 0.01%."
+        book.save(path)
+        holdings, subtotal = parse_equity_workbook(path, "Focused", "2026-05-31")
+        self.assertEqual((holdings["INE123456789"][0], holdings["INE123456789"][1], subtotal),
+                         (0, 100, 0))
+
+    def test_notice_free_month_uses_conservative_date_proxy(self):
+        source = self._workbook("may.xlsx", "2026-05-31", 2.0)
+        source["observed_http_last_modified"] = "Fri, 05 Jun 2026 00:00:00 GMT"
+        catalog = self.root / "catalog.json"
+        catalog.write_text(json.dumps({"periods": [{
+            "period_end": "2026-05-31",
+            "availability_rule": "file_last_modified_plus_10_calendar_days",
+            "sources": [source],
+        }]}))
+        audit = build_pilot(self.db, catalog, self.raw, self.root / "output")
+        self.assertEqual(audit["snapshots"][0]["availability_date"], "2026-06-10")
+        self.assertEqual(audit["snapshots"][0]["availability_basis"], "unverified_file_date_proxy")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -5,7 +5,7 @@ import hashlib
 import io
 import json
 import zipfile
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from http.cookiejar import CookieJar
 from pathlib import Path
 from urllib.request import HTTPCookieProcessor, Request, build_opener, urlopen
@@ -76,7 +76,14 @@ def build_action_review(db, catalog_path: Path, raw_dir: Path, output_dir: Path)
     action_path = _fetch_pinned(catalog["action_source"], raw_dir, True)
     listing_path = _fetch_pinned(catalog["listing_source"], raw_dir, False)
     listed = _listed_equity_isins(listing_path, listing_date)
-    assets = {row[0] for row in db.execute("SELECT DISTINCT asset_id FROM holdings WHERE quantity IS NOT NULL")}
+    # Historical additions to the holdings warehouse are outside this pinned
+    # July-August review. Include the June base snapshot and comparison months.
+    first_snapshot = date(start.year, start.month, 1) - timedelta(days=1)
+    assets = {row[0] for row in db.execute(
+        "SELECT DISTINCT h.asset_id FROM holdings h JOIN holding_snapshots s ON s.id=h.snapshot_id "
+        "WHERE h.quantity IS NOT NULL AND h.asset_id NOT LIKE 'IN9%' "
+        "AND s.period_end>=? AND s.period_end<=?",
+        (first_snapshot.isoformat(), end.isoformat()))}
     if not assets:
         raise ValueError("No imported holdings with share quantities")
     missing = assets - listed
