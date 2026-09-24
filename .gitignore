@@ -11,3 +11,4 @@ dist/
 *.egg-info/
 data/raw/
 data/generated/
+/docs/
