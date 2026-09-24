@@ -50,8 +50,8 @@ def parse_bhavcopy(content: bytes, day: date, assets: set[str]) -> dict[str, flo
 
 def archive_raw_closes(db, start: date, end: date, raw_dir: Path, output_dir: Path) -> dict:
     """Download daily raw closes; keep them separate from adjusted backtest prices."""
-    if start > end or (end - start).days > 366 or end > date.today():
-        raise ValueError("Choose a past date range of at most 367 calendar days")
+    if start > end or (end - start).days > 1095 or end > date.today():
+        raise ValueError("Choose a past date range of at most three years")
     assets = {row[0] for row in db.execute("SELECT DISTINCT asset_id FROM holdings WHERE quantity IS NOT NULL")}
     if not assets:
         raise ValueError("No imported HDFC ISINs with quantities")

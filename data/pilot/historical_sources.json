@@ -1,0 +1,26 @@
+{
+  "description": "Pinned historical NSE equity closes and actions plus official Nifty 500 total-return index",
+  "start_date": "2025-01-01",
+  "end_date": "2026-09-23",
+  "holdings_review_end_date": "2026-08-31",
+  "benchmark_id": "NIFTY500_TRI",
+  "action_source": {
+    "local_name": "2025-01-01_to_2026-09-23_actions.json",
+    "url": "https://www.nseindia.com/api/corporates-corporateActions?index=equities&from_date=01-01-2025&to_date=23-09-2026",
+    "sha256": "20099ea02b343a64a1b372b4168070998915284ae793182f08e2682dd1efe16a"
+  },
+  "tri_source": {
+    "local_name": "2025-01-01_to_2026-09-23_nifty500_tri.json",
+    "url": "https://www.niftyindices.com/BackPage/getTotalReturnIndexString",
+    "page_url": "https://www.niftyindices.com/reports/historical-data",
+    "cinfo": "{'name':'NIFTY 500','startDate':'01-Jan-2025','endDate':'23-Sep-2026','indexName':'NIFTY 500'}",
+    "canonical_sha256": "b5db5e51351d530c5903a10e652653a944a1e4e5c61fe2af1c023e9b564374e0"
+  },
+  "nse_bhavcopy_archive_sha256": "fed8ef52fc379f1a653846affb3f5d7b780a46a620f925b4042c658eb42c5345",
+  "isin_changes": [
+    {"old": "INE591G01017", "new": "INE591G01025", "ex_date": "2025-06-04", "event": "Coforge 10-to-2 face-value split"},
+    {"old": "INE386A01015", "new": "INE386A01023", "ex_date": "2025-06-10", "event": "Vesuvius India 10-to-1 face-value split"},
+    {"old": "INE258A01016", "new": "INE258A01024", "ex_date": "2025-11-03", "event": "BEML 10-to-5 face-value split"},
+    {"old": "INE745G01035", "new": "INE745G01043", "ex_date": "2026-01-02", "event": "MCX 10-to-2 face-value split"}
+  ]
+}
