@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "description": "Exploratory, predefined one-month HDFC holdings test; no strategy tuning from these outcomes",
+  "decision_start": "2025-03-01",
+  "decision_end": "2026-09-23",
+  "schedule": "recorded disclosure cutoff dates",
+  "signals": ["weight", "quantity"],
+  "universe": "Union of stocks held in either of each scheme's two latest adjacent monthly snapshots; exclude IN9 securities",
+  "zero_signal_policy": "Assign score zero to unchanged eligible stocks; do not equate missing corporate-action review with zero",
+  "quantity_policy": "Require documented action review for each stock and every scheme comparison in which it appears",
+  "horizon_calendar_days_from_entry": 30,
+  "max_entry_lag_calendar_days": 5,
+  "max_exit_lag_calendar_days": 5,
+  "benchmark_id": "NIFTY500_TRI",
+  "primary_diagnostic": "Date-wise Spearman rank correlation of signal score with subsequent benchmark-excess return, using midranks for ties",
+  "return_groups": "Negative, zero and positive score; tied scores stay in the same group; show counts and mean gross excess return",
+  "top_stock_result": "Existing top-two equal-weight cohort backtest, 25 basis points round-trip cost; skip rather than replace a missing top stock",
+  "comparison_policy": "Report each signal's eligible coverage and a paired weight-versus-quantity correlation on common stock/date observations",
+  "missing_data_policy": "Never fill missing stock returns, actions or historical disclosures; report dropped assets and skipped cohorts",
+  "inference_policy": "Descriptive only; the short history, provisional older publication cutoffs and incomplete historical universe do not support a confirmatory significance claim",
+  "flow_adjustment": "Deferred until a defensible scheme flow estimate is available"
+}
